@@ -27,17 +27,24 @@
   if (!toggle || !menu) return;
 
   const open  = () => {
+    const scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top      = `-${scrollY}px`;
+    document.body.style.width    = '100%';
     menu.classList.add('open');
     toggle.classList.add('open');
     toggle.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
   };
 
   const close = () => {
+    const scrollY = Math.abs(parseInt(document.body.style.top || '0', 10));
+    document.body.style.position = '';
+    document.body.style.top      = '';
+    document.body.style.width    = '';
+    window.scrollTo(0, scrollY);
     menu.classList.remove('open');
     toggle.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
   };
 
   toggle.addEventListener('click', open);
@@ -154,7 +161,7 @@
   const form = document.getElementById('contatoForm');
   if (!form) return;
 
-  const WHATSAPP_NUMBER = '5500000000000'; // ← substituir pelo número real
+  const WHATSAPP_NUMBER = '553484279165';
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();

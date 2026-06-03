@@ -5,7 +5,8 @@
       "Bash(Select-Object FullName, Length)",
       "Bash(git remote *)",
       "Bash(git branch *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(dir \"c:\\\\Users\\\\Home\\\\Desktop\\\\delsoares\\\\assets\\\\images\\\\icons\")"
     ]
   }
 }
