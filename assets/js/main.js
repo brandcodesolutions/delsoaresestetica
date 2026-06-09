@@ -4,6 +4,20 @@
 
 'use strict';
 
+/* ----- Ver mais subtitle ----- */
+(function initVerMais() {
+  const btn  = document.getElementById('verMaisBtn');
+  const more = document.querySelector('.ds-hero__subtitle-more');
+  if (!btn || !more) return;
+
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    more.classList.toggle('visible', !expanded);
+    btn.setAttribute('aria-expanded', String(!expanded));
+    btn.textContent = expanded ? 'Ver mais' : 'Ver menos';
+  });
+})();
+
 /* ----- Navbar scroll ----- */
 (function initNavbar() {
   const navbar = document.getElementById('navbar');
@@ -279,6 +293,29 @@ function showToast(message, type = 'success') {
 
     counters.forEach(el => observer.observe(el));
   }
+})();
+
+/* ----- Procedure / course toggle (shared) ----- */
+(function initProcedureToggles() {
+  const toggles = document.querySelectorAll('.ds-servico-item__toggle, .ds-dif-cat__toggle, .ds-curso-cat__toggle');
+  if (!toggles.length) return;
+
+  toggles.forEach(btn => {
+    const isCurso = btn.classList.contains('ds-curso-cat__toggle');
+    const defaultLabel = isCurso ? 'Ver cursos' : 'Ver procedimentos';
+    const openLabel    = isCurso ? 'Ocultar cursos' : 'Ocultar procedimentos';
+
+    btn.addEventListener('click', () => {
+      const list     = btn.previousElementSibling;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+      if (list && list.tagName === 'UL') {
+        list.hidden = expanded;
+      }
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.textContent = expanded ? defaultLabel : openLabel;
+    });
+  });
 })();
 
 /* ----- Lazy load images with fade ----- */
