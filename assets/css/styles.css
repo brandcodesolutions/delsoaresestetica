@@ -1228,6 +1228,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .ds-depoimentos__header .ds-section-label { padding-left: 0; }
 .ds-depoimentos__header .ds-section-label::before { display: none; }
+.ds-depoimentos__footer {
+  text-align: center;
+  margin-top: var(--sp-xl);
+}
+
 .ds-depoimentos__disclaimer {
   font-size: 0.7rem;
   color: var(--ds-subtle);
@@ -1241,6 +1246,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  align-items: stretch;
 }
 
 .ds-depoimento {
@@ -1251,6 +1257,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: all var(--t-med) var(--ease-out);
   animation-delay: var(--delay, 0s);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .ds-depoimento::before { content: none; }
 .ds-depoimento:hover {
@@ -1273,6 +1281,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   line-height: 1.8;
   color: var(--ds-mid);
   margin-bottom: 1.8rem;
+  flex: 1;
 }
 
 .ds-depoimento__author {
