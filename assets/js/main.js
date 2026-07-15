@@ -18,6 +18,24 @@
   });
 })();
 
+/* ----- Ver mais sobre ----- */
+(function initSobreVerMais() {
+  const btnMais  = document.getElementById('sobreVerMaisBtn');
+  const btnMenos = document.getElementById('sobreVerMenosBtn');
+  const more     = document.querySelector('.ds-sobre__text-more');
+  if (!btnMais || !btnMenos || !more) return;
+
+  const toggle = (expand) => {
+    more.classList.toggle('visible', expand);
+    btnMais.style.display  = expand ? 'none' : '';
+    btnMenos.style.display = expand ? '' : 'none';
+  };
+
+  toggle(false);
+  btnMais.addEventListener('click',  () => toggle(true));
+  btnMenos.addEventListener('click', () => toggle(false));
+})();
+
 /* ----- Navbar scroll ----- */
 (function initNavbar() {
   const navbar = document.getElementById('navbar');
