@@ -567,7 +567,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .ds-sobre__stats {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: 1px solid var(--ds-border);
@@ -576,19 +576,24 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.25rem;
+  padding: 0 2rem;
+  flex: 1;
+}
+.ds-sobre__stat + .ds-sobre__stat {
+  border-left: 1px solid var(--ds-border);
 }
 .ds-sobre__stat-num {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 600;
   color: var(--ds-wine);
   line-height: 1;
 }
 .ds-sobre__stat-label {
-  font-size: 0.68rem;
+  font-size: 0.63rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--ds-subtle);
   text-align: center;
@@ -1710,7 +1715,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .ds-sobre { padding: var(--sp-3xl) 1.2rem; }
   .ds-sobre__montagem { grid-template-columns: 1fr 1fr; }
   .ds-sobre__montagem-main img { min-height: 220px; }
-  .ds-sobre__stats { flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+  .ds-sobre__stats { flex-direction: column; gap: 0; padding: 0 2rem; }
+  .ds-sobre__stat { padding: 1rem 0; flex: none; }
+  .ds-sobre__stat + .ds-sobre__stat { border-left: none; border-top: 1px solid var(--ds-border); }
 
   .ds-servicos { padding: var(--sp-3xl) 1.2rem; }
   .ds-servicos__grid { grid-template-columns: 1fr; }
