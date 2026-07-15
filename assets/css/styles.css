@@ -1715,9 +1715,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .ds-sobre { padding: var(--sp-3xl) 1.2rem; }
   .ds-sobre__montagem { grid-template-columns: 1fr 1fr; }
   .ds-sobre__montagem-main img { min-height: 220px; }
-  .ds-sobre__stats { flex-direction: column; gap: 0; padding: 0 2rem; }
-  .ds-sobre__stat { padding: 1rem 0; flex: none; }
-  .ds-sobre__stat + .ds-sobre__stat { border-left: none; border-top: 1px solid var(--ds-border); }
+  .ds-sobre__stats { display: none; }
 
   .ds-servicos { padding: var(--sp-3xl) 1.2rem; }
   .ds-servicos__grid { grid-template-columns: 1fr; }
